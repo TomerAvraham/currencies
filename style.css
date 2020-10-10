@@ -1,0 +1,299 @@
+body {
+  margin: 0;
+  position: absolute;
+  background-color: #000a23;
+  color: #690a42;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+header nav ul {
+  color: #e0208d;
+  list-style-type: none;
+  position: relative;
+  padding-top: 5px;
+  bottom: 0;
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font: bolder;
+}
+header nav ul li {
+  display: inline;
+  padding: 15px;
+  padding-bottom: none;
+  cursor: pointer;
+}
+header nav ul li:hover {
+  border-bottom: 1px #e0208d solid;
+}
+header h1 {
+  display: inline-block;
+}
+header .navbar {
+  border-bottom: 2px solid #690a42;
+  margin-bottom: 50px;
+  transform: translateY(-60px);
+  background-color: rgba(0, 10, 35, 0.05);
+  border-radius: 6px;
+}
+header nav {
+  margin: 0;
+  height: 310px;
+}
+.switch,
+.switch * {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.switch label {
+  cursor: pointer;
+}
+.switch label input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch label input[type="checkbox"]:checked + .lever {
+  background-color: #590f46;
+}
+.switch label input[type="checkbox"]:checked + .lever:before,
+.switch label input[type="checkbox"]:checked + .lever:after {
+  left: 18px;
+}
+.switch label input[type="checkbox"]:checked + .lever:after {
+  background-color: #e0208d;
+}
+.switch label .lever {
+  content: "";
+  display: inline-block;
+  position: relative;
+  width: 36px;
+  height: 14px;
+  background-color: rgba(0, 0, 0, 0.38);
+  border-radius: 15px;
+  margin-right: 10px;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  vertical-align: middle;
+  margin: 0 16px;
+}
+.switch label .lever:before,
+.switch label .lever:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  left: 0;
+  top: -3px;
+  -webkit-transition: left 0.3s ease, background 0.3s ease,
+    -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+  transition: left 0.3s ease, background 0.3s ease, -webkit-box-shadow 0.1s ease,
+    -webkit-transform 0.1s ease;
+  transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease,
+    transform 0.1s ease;
+  transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease,
+    transform 0.1s ease, -webkit-box-shadow 0.1s ease,
+    -webkit-transform 0.1s ease;
+}
+.switch label .lever:before {
+  background-color: rgba(38, 166, 154, 0.15);
+}
+.switch label .lever:after {
+  background-color: #f1f1f1;
+  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+input[type="checkbox"]:checked:not(:disabled) ~ .lever:active::before,
+input[type="checkbox"]:checked:not(:disabled).tabbed:focus ~ .lever::before {
+  -webkit-transform: scale(2.4);
+  transform: scale(2.4);
+  background-color: rgba(38, 166, 154, 0.15);
+}
+input[type="checkbox"]:not(:disabled) ~ .lever:active:before,
+input[type="checkbox"]:not(:disabled).tabbed:focus ~ .lever::before {
+  -webkit-transform: scale(2.4);
+  transform: scale(2.4);
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.switch input[type="checkbox"][disabled] + .lever {
+  cursor: default;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.switch label input[type="checkbox"][disabled] + .lever:after,
+.switch label input[type="checkbox"][disabled]:checked + .lever:after {
+  background-color: #949494;
+}
+.my-btn {
+  background-color: #8cfcfd;
+  bottom: 0;
+}
+.cardHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.my-card {
+  max-width: 300px;
+  width: 170px;
+  color: #0785b1;
+}
+.more-info-style {
+  margin-top: 17px;
+  padding: 0;
+  width: 100%;
+}
+
+.more-info-style ul {
+  padding: 0;
+  text-align: left;
+  list-style-type: none;
+}
+.loading {
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#loading-image {
+  border-radius: 4px;
+  width: 300px;
+  height: 300px;
+}
+.loading-spinner {
+  display: none;
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#spinner {
+  border-radius: 50%;
+}
+.model {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #e0208d;
+  border-radius: 8px;
+  z-index: 999;
+  background-color: #000a23;
+  width: 380px;
+  color: #01f8ff;
+  padding-bottom: 8px !important;
+}
+.model header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px;
+  border-bottom: 2px solid #e0208d;
+}
+.model main {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 20px;
+}
+.model .toggle {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 8px;
+}
+#model-overlay {
+  display: none;
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#close-btn {
+  cursor: pointer;
+}
+#overlay {
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.show {
+  display: block;
+}
+.header-image img {
+  width: 100%;
+  height: 250px;
+}
+.header-image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title h1 {
+  color: #01f8ff;
+  width: 1200;
+  font-size: 50px;
+}
+
+#search {
+  height: 38px;
+}
+.my-input-group {
+  display: inline-block;
+}
+.about {
+  display: none;
+  flex-direction: column;
+  border: 2px outset #f83ba3;
+  width: 60%;
+  margin: 50px 20%;
+  padding: 20px;
+  color: #f83ba3;
+  border-radius: 4px;
+}
+.about-header {
+  display: block;
+  color: #8cfcfd;
+  border-bottom: 1px #8cfcfd double;
+  margin-bottom: 10px;
+}
+.about-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#money-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.sticky {
+  position: fixed;
+  top: 40px;
+  width: 100%;
+  z-index: 900;
+  background-color: rgba(0, 10, 35, 1) !important;
+}
+.sticky + .container {
+  padding-top: 60px;
+}
+.container > main {
+  margin-top: 20px !important;
+}

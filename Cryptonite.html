@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/Cryptonite.js" defer></script>
+    <title>Cryptonite</title>
+</head>
+<body>
+<div class="loading">
+    <img id="loading-image" src="/giphy.gif" alt="loading-gif">
+</div>
+<div class="loading-spinner">
+    <img id="spinner" src="/Spinner-0.9s-200px.gif" alt="">
+</div>
+<div id="overlay"></div>
+
+<div class="model">
+    <header>
+        <h4>Can't Mark More Than 5!</h4>
+        <span id="close-btn"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+            <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+          </svg></span>
+    </header>
+    <main>
+        <div class="toggle toggle1">
+        <span id="span1">coin name</span>
+        <button class="btn btn-outline-danger" onclick="removeEvent(event)" id="btn1">Remove</button>
+        </div>
+        <div class="toggle toggle2">
+        <span id="span2">coin name</span>
+        <button class="btn btn-outline-danger" onclick="removeEvent(event)" id="btn2">Remove</button>
+        </div>
+        <div class="toggle toggle3">
+        <span id="span3">coin name</span>
+        <button class="btn btn-outline-danger" onclick="removeEvent(event)" id="btn3">Remove</button>
+        </div>
+         <div class="toggle toggle4">
+        <span id="span4">coin name</span>
+        <button class="btn btn-outline-danger" onclick="removeEvent(event)" id="btn4">Remove</button>
+        </div>
+        <div class="toggle toggle5">
+        <span id="span5">coin name</span>
+        <button class="btn btn-outline-danger" onclick="removeEvent(event)" id="btn5">Remove</button>
+        </div>
+        <button class="btn btn-outline-success" id="done-btn">Done</button> 
+    </main>
+</div>
+<div id="model-overlay"></div>
+
+<div class="container">
+<header>
+        <nav>
+            <div class="header-image">
+                <img class="thumbnail"  src="/4027818.jpg" alt="">
+            </div>
+            <div class="navbar">
+                <div class="title">
+                <h1>Cryptonite</h1>
+                </div>
+                <ul>
+                    <li id="home">Home</li>
+                    <li id="liveReports">Live Reports</li>
+                    <li id="about">About</li>
+                </ul>
+                <input id="search" placeholder="Enter Coin Symbol" type="text">
+            </div>
+        </nav>
+        </header>
+        <main>
+            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+            <div class="card-deck"></div>
+            <div class="about">
+                <div class="about-header">
+                    <h5>Tomer Avraham</h5>
+                </div>
+                <div class="about-main">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sapiente consequatur ipsum reprehenderit eveniet aspernatur eaque quia, odio repellendus. Sint rem laborum quisquam dolorum. Beatae maxime voluptas commodi aperiam dolorem?</p>
+                    <img id="money-image" src="/conorwalk.gif" alt="">
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</html>
