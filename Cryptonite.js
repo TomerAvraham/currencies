@@ -20,6 +20,7 @@ function getCoins() {
 }
 
 function drawCoins(array) {
+  if (!array.length) return
   let i = 0;
   for (const coin of array) {
     let card = $(`
@@ -190,20 +191,14 @@ $("#done-btn").on("click", () => {
 let search_arr = [];
 let sort_0arr = [];
 $("#search").keyup(function () {
-  search_arr = [];
-  for (const coin of coinsArr) {
-    if ($("#search").val() == coin.symbol) {
-      search_arr.push(coin);
-    }
-  }
-  if (search_arr[0] != null) {
+  $("#home").trigger('click')
+  search_arr = coinsArr.filter(coin => coin.symbol.includes($("#search").val()))
+  if (search_arr.length) {
     $(".card-deck").empty();
     drawCoins(search_arr);
     keepToggleCheckedSearch(toggle_arr, search_arr);
   } else {
     $(".card-deck").empty();
-    drawCoins(coinsArr);
-    keepToggleChecked(toggleID_arr);
   }
 });
 
@@ -254,7 +249,7 @@ $("#liveReports").click(async function () {
     animationEnabled: true,
     theme: "light2",
     title: {
-      text: "Coins Value",
+      text: toggle_arr.join(),
     },
     axisX: {
       valueFormatString: "HH:MM ",
@@ -337,81 +332,41 @@ $("#liveReports").click(async function () {
     chart.render();
   }
 
+  const handelInterval = (number) => {
+    return (interval = setInterval(() => {
+      for (let i = 0; i < number; i++) {
+        UpdateChart(i, i);
+      }
+      if ($("#chartContainer").css("display") == "none") {
+        chart.data[0].dataPoints = [];
+        clearInterval(interval);
+      }
+      for (let i = 0; i < number; i++) {
+        UpdateChart(i, i);
+      }
+    }, 2000))
+  }
+  
   let arr_length = await getApiArrLength().catch((err) =>
-    alert("No data for those coins")
+  alert("No data for those coins")
   );
   let interval;
   switch (arr_length) {
     case 1:
-      UpdateChart(0, 0);
-      interval = setInterval(() => {
-        if ($("#chartContainer").css("display") == "none") {
-          chart.data[0].dataPoints = [];
-          clearInterval(interval);
-        }
-        UpdateChart(0, 0);
-      }, 2000);
+      handelInterval(1)
       break;
     case 2:
-      UpdateChart(0, 0);
-      UpdateChart(1, 1);
-      interval = setInterval(() => {
-        if ($("#chartContainer").css("display") == "none") {
-          chart.data[0].dataPoints = [];
-          clearInterval(interval);
-        }
-        UpdateChart(0, 0);
-        UpdateChart(1, 1);
-      }, 2000);
+      handelInterval(2)
       break;
 
     case 3:
-      UpdateChart(0, 0);
-      UpdateChart(1, 1);
-      UpdateChart(2, 2);
-      interval = setInterval(() => {
-        if ($("#chartContainer").css("display") == "none") {
-          chart.data[0].dataPoints = [];
-          clearInterval(interval);
-        }
-        UpdateChart(0, 0);
-        UpdateChart(1, 1);
-        UpdateChart(2, 2);
-      }, 2000);
+      handelInterval(3)
       break;
     case 4:
-      UpdateChart(0, 0);
-      UpdateChart(1, 1);
-      UpdateChart(2, 2);
-      UpdateChart(3, 3);
-      interval = setInterval(() => {
-        if ($("#chartContainer").css("display") == "none") {
-          chart.data[0].dataPoints = [];
-          clearInterval(interval);
-        }
-        UpdateChart(0, 0);
-        UpdateChart(1, 1);
-        UpdateChart(2, 2);
-        UpdateChart(3, 3);
-      }, 2000);
+      handelInterval(4)
       break;
     case 5:
-      UpdateChart(0, 0);
-      UpdateChart(1, 1);
-      UpdateChart(2, 2);
-      UpdateChart(3, 3);
-      UpdateChart(4, 4);
-      interval = setInterval(() => {
-        if ($("#chartContainer").css("display") == "none") {
-          chart.data[0].dataPoints = [];
-          clearInterval(interval);
-        }
-        UpdateChart(0, 0);
-        UpdateChart(1, 1);
-        UpdateChart(2, 2);
-        UpdateChart(3, 3);
-        UpdateChart(4, 4);
-      }, 2000);
+      handelInterval(5)
       break;
   }
 
